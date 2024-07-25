@@ -1,6 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
+
+func esPalindromo(prueba string) bool {
+	var reverso string
+
+	for i := len(prueba) - 1; i >= 0; i-- {
+		reverso += string(prueba[i])
+	}
+	var resultado bool = strings.ToLower(prueba) == strings.ToLower(reverso)
+	return resultado
+}
 
 func main() {
 	// Array
@@ -35,4 +48,21 @@ func main() {
 	slice = append(newSlice, slice...)
 	fmt.Println(slice)
 
+	// Recorriendo los arreglos
+	stringsSlice := []string{"Jola", "k", "aze", "uwu"}
+
+	for i, valor := range stringsSlice {
+		fmt.Printf("Indice %d valor %s\n", i, valor)
+	}
+
+	// Si solo se busca uno de los dos valores
+	for _, valor := range stringsSlice {
+		fmt.Println("Valor", valor)
+	}
+
+	// Es palindromo?
+	const prueba string = "Amor a roma"
+	fmt.Println("Es palindromo", prueba, esPalindromo(prueba))
+
+	// El paquete strings tiene mas funciones para manejo de strings.
 }
