@@ -55,7 +55,8 @@ func main() {
 	}
 
 	// Switch case
-	// Cuando se requieren multiples condiciones anidads.
+	// Cuando se requieren multiples condiciones anidadas.
+	// Y se va a iterar una variable.
 	switch modulo := prueba % 2; modulo {
 	case 0:
 		fmt.Println("Switch case con un par", prueba)
@@ -64,6 +65,7 @@ func main() {
 	}
 
 	// Switch sin condicion
+	// Si es similar a un if
 	thisValue := 0
 	switch {
 	case thisValue > 100:
